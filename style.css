@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.gridy{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(20,1fr);
+    grid-template-rows: repeat(10,1fr);
+    background: #1d1d1d;
+    filter: saturate(2);
+    overflow: hidden;
+    z-index: -1;
+}
+
+.colorBox{
+    z-index: 2;
+    filter: brightness(1.1);
+    transition: 2s ease;
+    position: relative;
+    margin: 2px;
+    background: #181818;
+}
+
+.colorBox:hover{
+    background: #FFF300;
+    transition-duration: 0s;
+}
+
+.bgfill{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #FFF300;
+    filter: blur(60px);
+    animation: animBack 6s linear infinite;
+}
+
+@keyframes animBack{
+    0%{
+        top: -100px;
+    }
+    100%{
+        top: 120%;
+    }
+}
+
+
+
+p{
+    word-wrap: break-word;
+    opacity: 0;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.wrapper{
+    height: fit-content;
+    width: 30%;
+    z-index: 3;
+    position: absolute;
+    color: #fff;
+    background: #222;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 5px 10px 50px 1px #fff;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.fade{
+    opacity: 100%;
+    transition: opacity 1.5s;
+}
+
+h2{
+    font-size: 100px;
+    padding-bottom: 30px;
+}
+h1{
+    padding: 30px;
+}
+         
+.btn{
+    background-image: linear-gradient(to right, #fceabb 0%, #f8b500  51%, #fceabb  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #000;
+    font-weight: 900;
+    font-size: 16px;            
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background-position: right center; /* change the direction of the change here */
+    text-decoration: none;
+    transform: scale(1.1);
+  }
+ 
+  @media only screen and (max-width:450px){
+    .gridy{
+        grid-template-columns: repeat(10,5fr);
+        grid-template-rows: repeat(20,1fr);
+    }    
+    .wrapper{
+        height: fit-content;
+        width: 75%;
+        padding-bottom: 30px;
+    }
+    h2{
+        font-size: 50px;
+        padding-bottom: 15px;
+    }
+    h1{
+        padding-bottom: 15px;
+        font-size: 20px;
+    }
+    .btn{
+        margin: 0;
+        padding: 10px 35px;
+        font-weight: 700;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width:770px) {
+    .gridy{
+        grid-template-columns: repeat(10,1fr);
+        grid-template-rows: repeat(20,1fr);
+    }   
+    .wrapper{
+        height: fit-content;
+        width: 45%;
+        padding-bottom: 30px;
+    }
+    h2{
+        font-size: 50px;
+        padding-bottom: 15px;
+    }
+    h1{
+        padding-bottom: 15px;
+        font-size: 20px;
+    }
+    .btn{
+        margin: 0;
+        padding: 10px 35px;
+        font-weight: 700;
+        font-size: 16px;
+    }
+}
